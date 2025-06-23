@@ -5,11 +5,11 @@ import lombok.*;
 
 @Entity
 @Table(name = "product")
-@AllArgsConstructor
-@NoArgsConstructor
 @Builder
-@Getter
 @Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,5 +20,4 @@ public class Product {
     private String name;
     private String description;
     private Double price;
-
 }
