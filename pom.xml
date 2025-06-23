@@ -34,6 +34,7 @@
 		<spring-boot.version>3.5.3</spring-boot.version>
 		<mapstruct.version>1.6.3</mapstruct.version>
 		<lombok.mapstruct.version>0.2.0</lombok.mapstruct.version>
+		<opendoc.version>2.6.0</opendoc.version>
 	</properties>
 
 	<dependencyManagement> <!--permite declarar versiones y configuraciones comunes de dependencias que pueden ser compartidas entre distintos módulos de un proyecto -->
@@ -67,6 +68,13 @@
 				<artifactId>mapstruct-processor</artifactId>
 				<version>${mapstruct.version}</version>
 				<scope>provided</scope>
+			</dependency>
+
+			<!--Opendoc-->
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+				<version>${opendoc.version}</version>
 			</dependency>
 
 		</dependencies>

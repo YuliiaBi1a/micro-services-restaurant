@@ -2,6 +2,9 @@ package com.yuliia.product.controller;
 
 import com.yuliia.product.dto.ProductDto;
 import com.yuliia.product.service.ProductServiceImpl;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.web.PageableDefault;
@@ -9,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.data.domain.Pageable;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
@@ -22,6 +24,12 @@ public class ProductController {
     public ProductController(ProductServiceImpl productService) {
         this.productService = productService; // también podemos usar @RequiredArgsConstructor de Lombok
     }
+
+    @Operation(summary = "Get all paginated products")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode =  "200", description = "Product retrieved successfully"),
+            @ApiResponse(responseCode = "500", description = "Generic unhandled error")
+    }) // para documentacion
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
