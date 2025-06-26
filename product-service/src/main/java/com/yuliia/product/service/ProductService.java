@@ -15,4 +15,7 @@ public interface ProductService {
     public ProductDto update(ProductDto product);
     public void delete(Long id);
 
+    // para usar template
+    public boolean getAvailability(String sku);
+
 }
